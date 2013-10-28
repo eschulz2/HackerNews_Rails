@@ -1,0 +1,13 @@
+<div class='registration'>
+  <h4>Register to submit posts and comments</h4>
+  <form action="/create_user" method="post">
+    <label for="username">Name</label>
+    <input type="text" name="user[name]" placeholder="Name">
+    <br>
+    <label for="password">Password</label>
+    <input type="password" name="user[password]" placeholder="Password">
+    <input type="submit">
+  </form>
+</div>
+
+<%= form_for :registration url: :registration%>
