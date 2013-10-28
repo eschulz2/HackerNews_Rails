@@ -1,13 +1,17 @@
-<div class='registration'>
-  <h4>Register to submit posts and comments</h4>
-  <form action="/create_user" method="post">
-    <label for="username">Name</label>
-    <input type="text" name="user[name]" placeholder="Name">
-    <br>
-    <label for="password">Password</label>
-    <input type="password" name="user[password]" placeholder="Password">
-    <input type="submit">
-  </form>
-</div>
+<h1>Welcome</h1>
 
-<%= form_for :registration url: :registration%>
+<%= form_for :user, url: users_path do |f|%>
+  <P>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
