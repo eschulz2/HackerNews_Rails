@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
       # @user = User.authenticate(params[:user][:password])
     else
       @error = "Your password or username is invalid, please sign up if you don't have an account."
-      render 'index'
+      render welcome_index_path
     end
   end
 
