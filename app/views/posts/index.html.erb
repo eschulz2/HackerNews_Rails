@@ -1,5 +1,15 @@
-<h1>Your Posts and Comments</h1>
+<h1>Your Posts</h1>
+
+<%= link_to "New Post", :controller => "posts", :action => "new"  %>
 
 <% @posts.each do |post| %>
   <li style="list-style:none;"><%= link_to post.title, :controller => "posts", :action => "show", :id => post.id %></li><br>
 <% end %>
+
+<h1>Your Comments</h1>
+
+<% @comments.each do |comment| %>
+  <li style="list-style:none;"> <%= comment.content %></li>
+<% end %>
+
+<%= %>

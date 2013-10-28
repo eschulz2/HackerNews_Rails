@@ -15,8 +15,10 @@ class UserSessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to welcome_index
+    unless session[:user_id] = nil
+      session[:user_id] = nil
+    end
+    redirect_to welcome_index_path
   end
 end
 
