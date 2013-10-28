@@ -1,8 +1,11 @@
 HackerNewsRails::Application.routes.draw do
   get "welcome/index"
 
-  resources :users
+  resources :users 
   resources :posts
+
+  resources :user_sessions
+  get '/login' => "user_sessions#create"
 
  root to: "welcome#index"
 

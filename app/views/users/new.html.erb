@@ -1,0 +1,15 @@
+<h1>Sign Up Below</h1>
+
+<div style="margin: 0 auto;">
+  <%= form_for :user, url: users_path do |f| %>
+  <%= f.label :EMAIL %>
+  <%= f.text_field :email %><br>
+  <%= f.label :PASSWORD %>
+  <%= f.label :password %>
+  <%= f.submit :SIGNUP %>
+  <%end%>
+</div>
+
+<% unless @error.nil? %>
+<p><%= @error %></p>
+<% end %>
