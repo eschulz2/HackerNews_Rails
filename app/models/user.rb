@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :password_digest, :password
+  attr_accessible :email, :password
+  
 
   include BCrypt
 
@@ -10,5 +11,7 @@ class User < ActiveRecord::Base
   validates_presence_of :password
 
   has_secure_password
+
+
   
 end
