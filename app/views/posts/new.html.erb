@@ -1,0 +1,12 @@
+<div style="margin-left:40%;">
+<%= form_for :post, url: posts_path do |f|%>
+
+  Title:
+  <%= f.text_field :title, :placeholder => "Your title goes here"%><br>
+<br>
+<%= f.label :Content %><br>
+<%= f.text_area :content %><br>
+<%= f.submit :Post %>
+
+<% end %>
+</div>

@@ -8,6 +8,10 @@
 </head>
 <body>
 
+  <% if session[:user_id] != nil %>
+  <%= render "layouts/navbar" %>
+  <% end %>
+
 <%= yield %>
 
 </body>
