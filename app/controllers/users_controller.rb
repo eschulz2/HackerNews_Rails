@@ -1,15 +1,18 @@
 class UsersController < ApplicationController
 
-  def create
-    
-    @user = User.find_by_email(params[:user][:email])
+  def new
 
-    if @user
-      @user.authenticate(params[:user][:password])
-      session[:user_id] = @user.id
-      redirect_to posts_path
-    else
-      redirect_to ('/')
-    end
+  end
+
+  def create
+    @user = User.create(params[:user])
+
+    if @user.valid?
+      redirect welcome_index
+    # session[:user_id] = @user.id
+    # redirect_to posts_path
+  else
+    @error = "You can't leave the email or password form fields blank. Please submit your registration again."
+    render 'login'
   end
 end

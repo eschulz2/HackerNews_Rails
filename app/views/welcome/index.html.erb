@@ -1,6 +1,6 @@
 <h1>Welcome</h1>
 
-<%= form_for :user, url: users_path do |f|%>
+<%= form_for :user, url: user_sessions_path do |f|%>
   <P>
     <%= f.label :email %><br>
     <%= f.text_field :email %>
@@ -15,3 +15,8 @@
   </p>
 <% end %>
 
+<% unless @error.nil? %>
+<p><%= @error %></p><br>
+<h3>Create a new account:</h3>
+<%= link_to "Creat Account", :controller => "users", :action => "new" %>%>
+<% end %>
