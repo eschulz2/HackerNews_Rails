@@ -1,5 +1,5 @@
 <h1>Your Posts and Comments</h1>
 
 <% @posts.each do |post| %>
-  <%= link_to  post.title, controller: show_posts_path %>
+  <li style="list-style:none;"><%= link_to post.title, :controller => "posts", :action => "show", :id => post.id %></li><br>
 <% end %>
